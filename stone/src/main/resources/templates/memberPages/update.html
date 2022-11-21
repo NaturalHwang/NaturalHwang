@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <h2>save.html</h2>
+  <form id="updateform" action="/member/update" method="post">
+      <input type="hidden" th:value="${updateMember?.id}" name="id"><br>
+      이메일: <input type = "text" th:value="${updateMember?.mail}"name="mail"> <br>
+      비밀번호: <input type = "text" id="password" name="password"> <br>
+      이름: <input type = "text" th:value="${updateMember?.username}"name="username"> <br>
+      학교: <input type = "text" th:value="${updateMember?.schoolname}"name="schoolname"> <br>
+      학번: <input type = "text" th:value="${updateMember?.getSId()}"name="sId"> <br>
+      전공: <input type = "text" th:value="${updateMember?.major}"name="major"> <br>
+      전화번호: <input type = "text" th:value="${updateMember?.phone}"name="phone"> <br>
+      닉네임: <input type = "text" th:value="${updateMember?.nick}"name="nick"> <br>
+
+      <input type="button" th:onclick="update()" value="정보수정">
+  </form>
+</body>
+<script th:inline="javascript">
+    const update = () => {
+      const pw = [[${updateMember?.password}]];
+      const  pwConfirm = document.getElementById("password").value;
+      if(pw == pwConfirm){
+          document.getElementById("updateform").submit();
+      } else{
+        alert("비밀번호가 틀립니다!");
+      }
+    }
+</script>
+</html>

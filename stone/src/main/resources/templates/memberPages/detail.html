@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button type = "button" onclick="location.href='/'">메인페이지 이동</button>
+      <table>
+          <tr>
+              <th>mail</th>
+              <th>password</th>
+              <th>username</th>
+              <th>schoolname</th>
+              <th>phone</th>
+              <th>nick</th>
+              <th>sid</th>
+          </tr>
+                <td th:text="${member.mail}"></td>
+                <td th:text="${member.password}"></td>
+                <td th:text="${member.username}"></td>
+                <td th:text="${member.schoolname}"></td>
+                <td th:text="${member.phone}"></td>
+                <td th:text="${member.nick}"></td>
+                <td th:text="${member.sId}"></td>
+          </tr>
+      </table>
+
+</body>
+</html>

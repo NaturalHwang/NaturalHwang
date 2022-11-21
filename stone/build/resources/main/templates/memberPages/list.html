@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src = "https://code.jquery.com/jquery-3.6.0.js"></script>
+</head>
+<body>
+<button type = "button" onclick="history.back()">뒤로가기</button>
+    <h2>list.html</h2>
+    세션값확인: <p th:text="${session.mail}"></p>
+
+    <table>
+      <tr>
+          <th>Id</th>
+          <th>Email</th>
+          <th>Password</th>
+          <th>Userame</th>
+          <th>SchoolName</th>
+          <th>SId</th>
+          <th>Major</th>
+          <th>Phone</th>
+          <th>Nick</th>
+          <th>상세조회</th>
+      </tr>
+      <tr th:each="member: ${memberList}">
+          <td th:text="${member.getId()}"></td>
+          <td th:text="${member.mail}"></td>
+          <td th:text="${member.password}"></td>
+          <td th:text="${member.username}"></td>
+          <td th:text="${member.schoolname}"></td>
+          <td th:text="${member.getSId()}"></td>>
+          <td th:text="${member.getMajor()}"></td>>
+          <td th:text="${member.phone}"></td>
+          <td th:text="${member.nick}"></td>
+          <td>
+             <a th:href="@{|/member/${member.id}|}">조회</a>
+          </td>
+          <td>
+             <a th:href="@{|/member/delete/${member.id}|}">삭제</a>
+          </td>
+      </tr>
+    </table>
+    <div id = "member-detail">
+
+    </div>
+</body>
+
+</html>

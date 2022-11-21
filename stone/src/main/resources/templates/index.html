@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <h2>index.html</h2>
+  <div th:if="${session.mail}">
+      <a href="/member/">회원목록</a>
+      <a href="/member/mypage">마이페이지</a>
+  </div>
+  <div th:if="${session.mail==null}">
+      <a href="/member/save-form">회원가입</a>
+      <a href="/member/login-form">로그인</a>
+  </div>
+</body>
+</html>
